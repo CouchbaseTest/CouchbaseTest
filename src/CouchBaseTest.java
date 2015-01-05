@@ -20,6 +20,17 @@ public class CouchBaseTest {
         scheduledExecutor.scheduleWithFixedDelay(new Runnable() {
 
             public void run() {
+                // Data Buckets:voip
+                // key and value following:
+                // v_version_android1.1_tldb
+                // {
+                // "index": 0,
+                // "value": "3",
+                // "voption": "tldb",
+                // "type": "v_version",
+                // "version": "android1.1"
+                // }
+
                 List<VersionDO> list = couchBaseAccess.getListSimpleObject("v_version", VersionDO.class);
                 System.out.println("size:" + list.size());
                 // TODO save to local cache
